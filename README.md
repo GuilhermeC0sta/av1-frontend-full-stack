@@ -47,7 +47,3 @@ controle-de-gastos/
 | Responsividade | Media queries em 768px e 480px, `flex-wrap` nos itens |
 | Bootstrap | Grid (`row`/`col`), cards, botões, alertas e formulários |
 | JavaScript DOM | Adicionar, remover e validar lançamentos dinamicamente |
-
-## Autor
-
-Projeto desenvolvido para o curso de Full Stack — OxeTech Academy.
