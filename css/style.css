@@ -1,0 +1,319 @@
+/* ===== Variáveis e reset ===== */
+:root {
+  --cor-primaria: #2563eb;
+  --cor-primaria-escura: #1d4ed8;
+  --cor-receita: #16a34a;
+  --cor-despesa: #dc2626;
+  --cor-fundo: #f1f5f9;
+  --cor-texto: #1e293b;
+  --cor-texto-claro: #64748b;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --raio: 12px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Header ===== */
+.site-header {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+  color: #fff;
+  padding: 2rem 0;
+  box-shadow: var(--sombra);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.header-icon {
+  max-width: 100%;
+  width: 64px;
+  height: 64px;
+  filter: brightness(0) invert(1);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.header-subtitle {
+  margin: 0.25rem 0 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+/* ===== Main ===== */
+.main-content {
+  flex: 1;
+  padding: 2rem 1rem 3rem;
+}
+
+.main-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--cor-texto);
+}
+
+.summary-section,
+.form-section,
+.list-section {
+  margin-bottom: 2rem;
+}
+
+/* ===== Cards de resumo ===== */
+.summary-card {
+  border: none;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  transition: transform 0.2s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-2px);
+}
+
+.summary-income {
+  border-left: 4px solid var(--cor-receita);
+}
+
+.summary-expense {
+  border-left: 4px solid var(--cor-despesa);
+}
+
+.summary-balance {
+  border-left: 4px solid var(--cor-primaria);
+}
+
+.summary-label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--cor-texto-claro);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.summary-value {
+  margin: 0.25rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.summary-income .summary-value {
+  color: var(--cor-receita);
+}
+
+.summary-expense .summary-value {
+  color: var(--cor-despesa);
+}
+
+.summary-balance .summary-value {
+  color: var(--cor-primaria);
+}
+
+/* ===== Formulário ===== */
+.form-card,
+.list-card {
+  border: none;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.lancamento-form .form-label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+.btn-add {
+  width: 100%;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+/* ===== Lista de lançamentos ===== */
+.lancamentos-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lista-vazia {
+  text-align: center;
+  color: var(--cor-texto-claro);
+  padding: 2rem 1rem;
+  font-style: italic;
+}
+
+.lancamento-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.lancamento-item:hover {
+  background-color: #f8fafc;
+}
+
+.lancamento-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.lancamento-descricao {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.lancamento-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--cor-texto-claro);
+}
+
+.lancamento-categoria {
+  background-color: #e2e8f0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.lancamento-tipo {
+  font-weight: 500;
+}
+
+.lancamento-tipo.receita {
+  color: var(--cor-receita);
+}
+
+.lancamento-tipo.despesa {
+  color: var(--cor-despesa);
+}
+
+.lancamento-valor {
+  font-weight: 700;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+.lancamento-valor.receita {
+  color: var(--cor-receita);
+}
+
+.lancamento-valor.despesa {
+  color: var(--cor-despesa);
+}
+
+.btn-remover {
+  flex-shrink: 0;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background-color: var(--cor-texto);
+  color: #94a3b8;
+  padding: 1.25rem 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 1.5rem 0;
+  }
+
+  .header-brand {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .site-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .summary-value {
+    font-size: 1.25rem;
+  }
+
+  .lancamento-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lancamento-valor {
+    align-self: flex-start;
+  }
+
+  .btn-remover {
+    align-self: flex-end;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1.5rem 0.75rem 2rem;
+  }
+
+  .header-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
